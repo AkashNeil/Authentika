@@ -62,6 +62,34 @@ and send the following ``json`` as a ``POST`` :
 "role": ["mod","user"]
 }
 ```
+To log in (``/api/auth/signin``), use ``POST`` and send json in the format :
+
+```json
+{
+"username": "neil", 
+"password": "1234567"
+}
+``` 
+
+It will return something like the following :
+
+```json
+{
+    "id": 1,
+    "username": "neil",
+    "email": "akash@neil.com",
+    "roles": [
+        "ROLE_USER",
+        "ROLE_MODERATOR"
+    ],
+    "accessToken": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuZWlsIiwiaWF0IjoxNjEzOTIzMTQwLCJleHAiOjE2MTQwMDk1NDB9.Vzo6kaXVfdyp9qX3iIee3m0B0JlZe2urWEOn4qnBnyljxx-AN_n0dat_IJb8MXsZEY5p0VW4GS3IKpGPa43xuA",
+    "tokenType": "Bearer"
+}
+```
+
+To access user details, go to ``/api/test/user`` and do a ``GET`` after entering the above bearer access token in the header :
+
+![user content](user_content.png)
 
 
 
